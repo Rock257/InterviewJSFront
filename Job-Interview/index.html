@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Interview </title>
+    <style>
+        .box-model{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 100px;
+            height: 100px;
+            background-color: grey;
+            border: 10px solid red;
+            padding: 25px;
+            margin: 30px; */ 
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+        }
+       
+        div {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            color: black;
+        }
+        #grandparent {
+            background-color: green;
+            width: 300px;
+            height: 300px;
+        }
+        #parent {
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+        #child {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        #infiniteScroll{
+    font-family: sans-serif;
+    background-color: green;
+}
+  
+        .container {
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    overflow-y: scroll;
+}
+  
+.loading-container {
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, 
+        Times, "Times New Roman", serif;
+    font-size: 30px;
+    text-align: center;
+}
+  
+.search-data {
+    margin-top: 10px;
+    height: 30px;
+    font-family: Verdana, Geneva, 
+        Tahoma, sans-serif;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Js Interview Prep </h1>
+    <div>
+        <h3>ALL JS code execution is take place inside the execution context </h3>
+        <h2>execution context is also into two parts  
+            <ul>
+                <li>Variable environment : variable and function are stored here as the key value pair  </li>
+                <li>Thread of execution : this is place where code is executed one line at a time  </li>
+            </ul>
+        </h2>
+        
+    </div>
+    
+    <h3>
+        <button id ="btn" onclick='this.style.display = "none" '>click to remove me</button>
+    </h3>
+    <section id="Prime-no"> 
+        <div class="primeNoGenerator">
+            <h2>
+            Genrate Prime Numbers 
+            </h2>
+            <label for="qouta">Number of prime</label>
+            <input type="text" id = "qouta" name="qouta" value="100000"/>
+            <button id="generate">Genrate Prime</button>
+            <button id="reload">Reload</button>
+            <div id="output"></div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </section>
+    <section class="interview-question">
+        <ul>
+            <li>
+                Difference between HTML and HTML5 ?
+            </li>
+            <p>HTML stands for Hyper Text Markup Language</p>
+            <p>
+                HTML5 is the fifth version of HTML. Many elements are removed or modified from HTML5.
+            </p>
+            <li>
+                what is box model ?
+            </li>
+            <p>
+                the term "box model" is used when talking about design and layout.
+            </p>
+            <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content</p>
+            <p>
+                <ul>
+                    <li>
+                        Content - The content of the box, where text and images appear
+                    </li>
+                    <li>
+                        Padding - Clears an area around the content. The padding is transparent
+                    </li>
+                    <li>
+                        Border - A border that goes around the padding and content
+                    </li>
+                    <li>
+                        Margin - Clears an area outside the border. The margin is transparent
+                    </li>
+                </ul>
+                <h2>Inspect below element for better understanding :</h2>
+                <div class="box-model">
+                    Hello
+                </div>
+            </p>
+            <li>
+                <p>wht is Difference bw and an id and class</p>
+            </li>
+            Both are CSS selector <br>
+            <b>ID</b> : HTML id Attribute: The id attribute is a unique identifier that is used to specify the document.
+            <br>
+             <b>Class</b> : HTML class Attribute: The class attribute is used to specify one or more class names for an HTML element.
+             <br>
+             <li>
+                
+                Difference between <b>
+                    var, let and const
+                </b>  keywords in JavaScript
+             </li>
+        </ul>
+    </section>
+    <section>
+        <div class="promise" >
+            <h1 style="text-align: center;">Promise</h1>
+            <div><span>Defination : </span> <p>
+                A prmoise is proxy for a value not necessarily known when the promise is created. 
+                it allows you to associate handlers with an asynchronous action's eventual success value or failure reason. 
+                <ul>
+                    <h3>Promise states</h3>
+                    <li>
+                        pending : initial state , neither fulfilled nor rejected
+                    </li>
+                    <li>
+                        fulfilled: successfully completed
+                    </li>
+                    <li>
+                        rejected : operation failed
+                    </li>
+                </ul>
+            </p>
+        <img src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png" alt="">
+        </div>
+
+        </div>
+    </section>
+    <section>
+        <h2>
+            Event in Js  : HTML events are "things" that happen to HTML elements.
+        </h2>
+        <div class="eventJS">
+            <button onclick="document.getElementById('demoEvent').innerHTML = Date()"> The Time is 
+            </button>
+            <p id="demoEvent">
+            </p>
+            <button onclick="alert('Hello World When you click the button')"> Alert Me</button>
+        </div>
+        <div>
+            <h2>
+                event bubbling and capturing ?
+            </h2>
+            <h3 style="color: black;">
+                Event capturing means propagation of event is done from ancestor elements to child element in the DOM while event bubbling means propagation is done from child element to ancestor elements in the DOM.
+            </h3>
+            <h2>Welcome To GFG</h2>
+            <div id="grandparent">GrandParent
+                <div id="parent">Parent
+                    <div id="child">Child</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="infinite-scrolling">
+        <div class="" id="infiniteScroll"> 
+        <div class="container">
+            <h1>GeeksforGeeks Infinite Scrolling</h1>
+            <div class="result-container"></div>
+            <div class="loading-container"></div>
+        </div>
+    </div>
+    </section>
+    <section>
+        <div class="intHtmlCSS">
+            <h1>
+                 Interview question HTML/CSS (Frequently asked questions)
+            </h1>
+        </div>
+        <ul>
+            <li>
+                1. Difference between ( Display:none visibility:hidden opacity:0 )
+            </li>
+            <p>display:none, visibility:hidden, and opacity:0 can be used to hide eleme nts visually but:</p>
+            <ul>
+                <li>
+                    display:none turns off the layout of the elements, so they are not rendered
+                </li>
+                <li>
+                    visibility:hidden hides the elements without changing their layouts
+                </li>
+                <li>
+                    opacity:0 causes the elements to be very transparent but users can still interact with them.
+                </li>
+            </ul>
+            <li>
+                What are ways to hide elements in DOM.
+            </li>
+            <p>
+                via the CSS property display , e.g. display: none;
+                via the CSS property visibility , e.g. visibility: hidden;
+                via the HTML5 attribute hidden , e.g. <span hidden>
+            </p>
+            <li>
+                Pseudo class/ pseudo selector.
+            </li>
+            <p>
+                A pseudo-class is a selector that selects elements that are in a specific state, e.g. they are the first element of their type, or they are being hovered over by the mouse pointer.
+            </p>
+            <li>
+                Semantic element vs non semantic element.
+            </li>
+            <p>
+               <b>Semantic element  : </b> These elements simply mean, elements with meaning. The reason being, there definition in the code tells the browser and the developer what they are supposed to do
+            </p>
+            <p>
+                <b> Non semantic element :</b> Unlike, semantic elements they don't have any meaning. They don't tell anything about the content they contain.
+            </p>
+            <table>
+                <thead>
+                <tr>Semantic element </tr> 
+                <tr>Non semantic element </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>they have meaning</td>
+                        <td>they have meaning</td>
+                    </tr>
+                    <tr>
+                        <td>they describe how the content within them is supposed to behave</td>
+                        <td>they can contain anything</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            they have specific attributes for their structure
+                        </td>
+                        <td>
+                            ‘class’ attribute can be used to work with their structure
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </ul>
+       
+    </section>
+    <section style="display: flex;align-items: center; justify-content: center;">
+        <!-- <ul>
+            <li>
+                centering a div and shape of div radius 
+            </li>
+        </ul> -->
+        <div class="circleCenter" style="display: flex; align-items: center; justify-content: center; color: black; height: 500px; width: 500px; background-color: chocolate; border-radius: 50%;" >
+            <h1>Hello</h1>
+        </div>
+    </section>
+    <!-- <script src="/LexicalScope.js"></script> -->
+    <!-- <script src="/script.js"></script> -->
+    <!-- <script src="/closure.js"></script> --> 
+    <!-- <script src="/async.js"></script> -->
+    <!-- <script src="/output.js"></script> -->
+        <!-- // <script src="/webApi.js"> -->
+        <!-- <script src="/objects.js"></script> -->
+        <!-- <script src="/JSworks.js"></script> -->
+        <!-- <script src="/intQuestion.js"></script> -->
+        <!-- <script src="/promise.js"></script> -->
+        <!-- <script src="/event.js"></script> -->
+        <!-- <script src="/infiniteScrolling.js"></script> -->
+        <script src="/recursive.js"></script>
+        
+    </script>
+</body>
+</html>
